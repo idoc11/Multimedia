@@ -1,0 +1,1 @@
+Структура: index.html, text.html, img/, ai-raw/, screens/, prompts.md, report.md. Копии banner_1200x630.png, card_600x800.png и icon-*.svg лежат в корне по требованию задания. Название папки: multimedia-rabota-Фамилия.

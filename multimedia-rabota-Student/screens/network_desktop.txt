@@ -1,0 +1,8 @@
+multimedia-rabota-Student/index.html	document	4731
+img/banner_600x315.avif	image	8759
+img/bg_1920x1080.webp	image	12439
+img/icon-cup.svg	image	193
+img/icon-bean.svg	image	193
+img/icon-clock.svg	image	143
+img/icon-pin.svg	image	180
+img/card_300x400.avif	image	7881

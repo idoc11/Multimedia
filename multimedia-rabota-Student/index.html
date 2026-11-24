@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кофейня «Утро» — учебная страница</title>
+<meta name="description" content="Учебная страница кофейни: баннер, карточка товара и иконки, оптимизированные для веба.">
+<link rel="preload" as="image" href="img/banner_600x315.avif" imagesrcset="img/banner_600x315.avif 1x, img/banner_1200x630.avif 2x" type="image/avif" fetchpriority="high">
+<style>
+  :root { --brown: #3b2113; --sand: #ffd27a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 18px/1.6 "Liberation Sans", Arial, sans-serif; color: #222; background: #fff8ee; }
+  img, svg { max-width: 100%; height: auto; }
+  header, main, footer { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { margin: 8px 0; font-size: 32px; line-height: 1.2; color: var(--brown); }
+  h2 { font-size: 26px; line-height: 1.25; color: var(--brown); }
+  .hero img { display: block; width: 100%; max-width: 600px; border-radius: 12px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .card { flex: 0 1 300px; }
+  .card img { display: block; width: 100%; border-radius: 12px; }
+  .about { flex: 1 1 280px; max-width: 68ch; }
+  .features { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 28px; }
+  .features li { display: flex; align-items: center; gap: 8px; }
+  .features img { width: 24px; height: 24px; }
+  .contacts { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px 16px; }
+  a { color: #0b57d0; }
+  footer { margin-top: 32px; padding: 32px 16px; color: #fff; text-align: center;
+           background: #3b2113 url("img/bg_1920x1080.webp") center / cover no-repeat; }
+  footer p { margin: 0; padding: 12px; background: rgba(24,14,8,.82); display: inline-block; border-radius: 8px; }
+  @media (max-width: 600px) { h1 { font-size: 26px; } .card { flex-basis: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Кофейня «Утро»</h1>
+</header>
+<main>
+  <section class="hero" aria-label="Главный баннер">
+    <picture>
+      <source type="image/avif" srcset="img/banner_600x315.avif 1x, img/banner_1200x630.avif 2x">
+      <source type="image/webp" srcset="img/banner_600x315.webp 1x, img/banner_1200x630.webp 2x">
+      <img src="img/banner_600x315.jpg" srcset="img/banner_600x315.jpg 1x, img/banner_1200x630.jpg 2x"
+           width="600" height="315" loading="eager" fetchpriority="high"
+           alt="Баннер кофейни: чашка капучино на деревянном столе у окна, надпись «Кофе, который начинает утро» и кнопка «Заказать столик»">
+    </picture>
+  </section>
+
+  <h2>Почему к нам возвращаются</h2>
+  <ul class="features">
+    <li><img src="img/icon-cup.svg" width="24" height="24" alt="" loading="lazy">Свежий кофе каждый день</li>
+    <li><img src="img/icon-bean.svg" width="24" height="24" alt="" loading="lazy">Своя обжарка зёрен</li>
+    <li><img src="img/icon-clock.svg" width="24" height="24" alt="" loading="lazy">Открыты с 7:00</li>
+    <li><img src="img/icon-pin.svg" width="24" height="24" alt="" loading="lazy">Рядом с метро</li>
+  </ul>
+
+  <div class="grid">
+    <figure class="card" style="margin:0">
+      <picture>
+        <source type="image/avif" srcset="img/card_300x400.avif 1x, img/card_600x800.avif 2x">
+        <source type="image/webp" srcset="img/card_300x400.webp 1x, img/card_600x800.webp 2x">
+        <img src="img/card_300x400.jpg" srcset="img/card_300x400.jpg 1x, img/card_600x800.jpg 2x"
+             width="300" height="400" loading="lazy"
+             alt="Карточка товара: капучино с рисунком на пенке, цена от 220 рублей, кнопка «Добавить в заказ»">
+      </picture>
+    </figure>
+    <section class="about">
+      <h2>Капучино с розеткой</h2>
+      <p>Варим на свежей обжарке и подаём горячим. Заходите утром&nbsp;— по&nbsp;будням до&nbsp;10:00 десерт в&nbsp;подарок к&nbsp;любому напитку.</p>
+      <div class="contacts">
+        <p>Бронь столика: <a href="tel:+70000000000">+7&nbsp;(000)&nbsp;000-00-00</a></p>
+        <p>Почта: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <p>Иллюстрации подготовлены учебным скриптом (см. ai-raw/ и prompts.md). Фон: 1920×1080 WebP.</p>
+</footer>
+</body>
+</html>
