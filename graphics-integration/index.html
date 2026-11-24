@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Интеграция графики: галерея, Canvas, IndexedDB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="page-head">
+  <h1>Интеграция графики</h1>
+  <p>Адаптивная галерея, обработка изображений на Canvas, публикация и локальная база медиафайлов (IndexedDB)</p>
+</header>
+
+<main>
+  <!-- ЗАДАНИЕ 1 -->
+  <section aria-labelledby="t1">
+    <h2 id="t1">1. Адаптивная галерея</h2>
+    <div class="gallery" id="gallery">
+      <figure class="gallery-item"><img src="img/sunset.jpg" width="800" height="600" alt="Закат: тёмные холмы и жёлтое солнце над ними" loading="lazy"><figcaption class="caption">Закат</figcaption></figure>
+      <figure class="gallery-item"><img src="img/mountains.jpg" width="800" height="600" alt="Горы в голубой дымке и облака" loading="lazy"><figcaption class="caption">Горы</figcaption></figure>
+      <figure class="gallery-item"><img src="img/sea.jpg" width="800" height="600" alt="Синее море под ясным небом" loading="lazy"><figcaption class="caption">Море</figcaption></figure>
+      <figure class="gallery-item"><img src="img/forest.jpg" width="800" height="600" alt="Хвойный лес в три слоя, от светлого к тёмному" loading="lazy"><figcaption class="caption">Лес</figcaption></figure>
+      <figure class="gallery-item"><img src="img/city.jpg" width="800" height="600" alt="Ночной город: силуэты домов с жёлтыми окнами" loading="lazy"><figcaption class="caption">Ночной город</figcaption></figure>
+      <figure class="gallery-item"><img src="img/desert.jpg" width="800" height="600" alt="Песчаные барханы в тёплом свете" loading="lazy"><figcaption class="caption">Пустыня</figcaption></figure>
+    </div>
+    <p class="hint">Изображения созданы скриптом (Python/Pillow), это не фотографии.</p>
+  </section>
+
+  <!-- ЗАДАНИЕ 2 -->
+  <section aria-labelledby="t2">
+    <h2 id="t2">2. Обработка изображения на Canvas</h2>
+    <div class="toolbar">
+      <label class="file-label">Выберите изображение:
+        <input type="file" id="fileInput" accept="image/*">
+      </label>
+    </div>
+    <div class="toolbar" role="group" aria-label="Фильтры">
+      <button type="button" data-filter="grayscale" disabled>Чёрно-белое</button>
+      <button type="button" data-filter="sepia" disabled>Сепия</button>
+      <button type="button" data-filter="invert" disabled>Негатив</button>
+      <button type="button" data-filter="contrast" disabled>Контраст +</button>
+      <button type="button" id="resetBtn" disabled>Сбросить</button>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="canvas" aria-label="Редактируемое изображение" role="img"></canvas>
+      <p id="canvasEmpty" class="hint">Изображение не выбрано.</p>
+    </div>
+    <p id="filterInfo" class="hint" aria-live="polite"></p>
+  </section>
+
+  <!-- ЗАДАНИЕ 3 -->
+  <section aria-labelledby="t3">
+    <h2 id="t3">3. Публикация обработанного изображения</h2>
+    <div class="toolbar">
+      <button type="button" id="publishBtn" disabled>Опубликовать в галерее</button>
+      <button type="button" id="uploadBtn" disabled>Загрузить на сервер</button>
+    </div>
+    <div class="gallery" id="previewContainer" aria-label="Опубликованные изображения"></div>
+    <pre id="uploadResult" class="log" aria-live="polite" hidden></pre>
+  </section>
+
+  <!-- ЗАДАНИЕ 4 -->
+  <section aria-labelledby="t4">
+    <h2 id="t4">4. База медиафайлов (IndexedDB)</h2>
+    <form id="saveForm" class="save-form">
+      <label>Название <input type="text" id="nameInput" maxlength="80" placeholder="например, закат_чб"></label>
+      <label>Описание (используется как alt) <input type="text" id="descInput" maxlength="200" placeholder="Что на изображении"></label>
+      <button type="submit" id="saveBtn" disabled>Сохранить в базу</button>
+    </form>
+    <div class="toolbar">
+      <button type="button" id="clearDbBtn">Очистить базу</button>
+      <span id="dbStats" class="hint" aria-live="polite"></span>
+    </div>
+    <div class="gallery" id="dbGallery" aria-label="Изображения из базы"></div>
+    <p id="dbEmpty" class="hint" hidden>В базе пока нет изображений.</p>
+  </section>
+</main>
+
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<footer class="page-foot">Практическое занятие «Интеграция графики» · HTML, CSS, JavaScript</footer>
+<script src="app.js"></script>
+</body>
+</html>
