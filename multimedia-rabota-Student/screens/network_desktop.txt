@@ -1,5 +1,5 @@
-multimedia-rabota-Student/index.html	document	4731
-img/banner_600x315.avif	image	8759
+multimedia-rabota-Student/index.html	document	5396
+img/banner_1200x630.avif	image	13242
 img/bg_1920x1080.webp	image	12439
 img/icon-cup.svg	image	193
 img/icon-bean.svg	image	193

@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Кофейня «Утро» — учебная страница</title>
 <meta name="description" content="Учебная страница кофейни: баннер, карточка товара и иконки, оптимизированные для веба.">
-<link rel="preload" as="image" href="img/banner_600x315.avif" imagesrcset="img/banner_600x315.avif 1x, img/banner_1200x630.avif 2x" type="image/avif" fetchpriority="high">
 <style>
   :root { --brown: #3b2113; --sand: #ffd27a; }
   * { box-sizing: border-box; }
@@ -14,7 +13,7 @@
   header, main, footer { max-width: 960px; margin: 0 auto; padding: 16px; }
   h1 { margin: 8px 0; font-size: 32px; line-height: 1.2; color: var(--brown); }
   h2 { font-size: 26px; line-height: 1.25; color: var(--brown); }
-  .hero img { display: block; width: 100%; max-width: 600px; border-radius: 12px; }
+  .hero img { display: block; width: 100%; height: auto; border-radius: 12px; }
   .grid { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
   .card { flex: 0 1 300px; }
   .card img { display: block; width: 100%; border-radius: 12px; }
@@ -22,6 +21,7 @@
   .features { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 28px; }
   .features li { display: flex; align-items: center; gap: 8px; }
   .features img { width: 24px; height: 24px; }
+  .contacts p { margin: 6px 0; }
   .contacts { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px 16px; }
   a { color: #0b57d0; }
   footer { margin-top: 32px; padding: 32px 16px; color: #fff; text-align: center;
@@ -33,14 +33,19 @@
 <body>
 <header>
   <h1>Кофейня «Утро»</h1>
+  <p><a href="text.html">Пример подготовленного текста (задание 1)</a></p>
 </header>
 <main>
   <section class="hero" aria-label="Главный баннер">
     <picture>
-      <source type="image/avif" srcset="img/banner_600x315.avif 1x, img/banner_1200x630.avif 2x">
-      <source type="image/webp" srcset="img/banner_600x315.webp 1x, img/banner_1200x630.webp 2x">
-      <img src="img/banner_600x315.jpg" srcset="img/banner_600x315.jpg 1x, img/banner_1200x630.jpg 2x"
-           width="600" height="315" loading="eager" fetchpriority="high"
+      <source media="(max-width: 600px)" type="image/avif" width="600" height="600" sizes="calc(100vw - 32px)" srcset="img/banner_m_600.avif 600w, img/banner_m_1000.avif 1000w">
+      <source media="(max-width: 600px)" type="image/webp" width="600" height="600" sizes="calc(100vw - 32px)" srcset="img/banner_m_600.webp 600w, img/banner_m_1000.webp 1000w">
+      <source media="(max-width: 600px)" width="600" height="600" sizes="calc(100vw - 32px)" srcset="img/banner_m_600.jpg 600w, img/banner_m_1000.jpg 1000w">
+      <source type="image/avif" sizes="(min-width: 960px) 928px, calc(100vw - 32px)" srcset="img/banner_600x315.avif 600w, img/banner_1200x630.avif 1200w">
+      <source type="image/webp" sizes="(min-width: 960px) 928px, calc(100vw - 32px)" srcset="img/banner_600x315.webp 600w, img/banner_1200x630.webp 1200w">
+      <img src="img/banner_1200x630.jpg" sizes="(min-width: 960px) 928px, calc(100vw - 32px)"
+           srcset="img/banner_600x315.jpg 600w, img/banner_1200x630.jpg 1200w"
+           width="1200" height="630" loading="eager" fetchpriority="high"
            alt="Баннер кофейни: чашка капучино на деревянном столе у окна, надпись «Кофе, который начинает утро» и кнопка «Заказать столик»">
     </picture>
   </section>
@@ -74,7 +79,7 @@
   </div>
 </main>
 <footer>
-  <p>Иллюстрации подготовлены учебным скриптом (см. ai-raw/ и prompts.md). Фон: 1920×1080 WebP.</p>
+  <p>Учебная работа. Иллюстрации созданы скриптом, а не нейросетью (см. prompts.md).</p>
 </footer>
 </body>
 </html>
